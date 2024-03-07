@@ -1,13 +1,97 @@
+
 <!DOCTYPE html>
 <html>
+
 <head>
-  <meta charset="utf-8">
-  <title>jivin.github.io</title>
+    <title>Jivin.L's Favorites</title>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <style>
+        body,
+        h1, h2, h3, h4, h5, h6, hr, p, blockquote, dl, dt, dd, ul, ol, li, pre, form, fieldset, legend, button, input, textarea, th, td {
+            margin: 0;
+            padding: 0;
+        }
+    </style>
+    <!-- 新 Bootstrap5 核心 CSS 文件 -->
+    <link rel="stylesheet" href="https://cdn.staticfile.org/twitter-bootstrap/5.1.1/css/bootstrap.min.css" />
+    <!-- 最新的 Bootstrap5 核心 JavaScript 文件 -->
+    <script src="https://cdn.staticfile.org/twitter-bootstrap/5.1.1/js/bootstrap.bundle.min.js"></script>
+    <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
+
 </head>
 
 <body>
+    <div id="app">
 
-<p>jivin.github.io</p>
+        <div class="container">
+            <div class="text-center p-3 bg-primary bg-opacity-10 border border-info rounded">
+                {{ message }}
+            </div>
+
+            <!-- row 行; g gutter 间距 ;row-cols-1 最小界面的列数,其他还有sm,md,lg的;h-75 占父组件高度的75%;text-center 文字居中 -->
+            <div class="row row-cols-1 row-cols-sm-2 row-cols-md-4 row-cols-lg-5 g-1">
+                <div class="col" v-for="item in list">
+                    <div class="card shadow-sm text-center mb-2 h-100">
+                        <div class="overflow-hidden bg-info text-white p-5 h-75">
+                            {{item[0]}}
+                        </div>
+                        <div class="card-body">
+                            <a class="btn btn-sm btn-outline-secondary" target="_blank" :href="item[1]">查看</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </div>
+
+
+    <script>
+        const link_sites = [
+            ['Markdown在线编辑器','./md/'],
+            ['Markdown转微信公众号格式化工具','./mw/'],
+            ['book','./book/'],
+            ['多才多多的博客','https://blog.csdn.net/u010456602'],
+            ['Dcat-admin文档', 'https://learnku.com/docs/dcat-admin/2.x'],
+            ['PHP 代码简洁之道', 'https://learnku.com/docs/clean-code-php'],
+            ['laravel项目开发规范', 'https://learnku.com/docs/laravel-specification/9.x'],
+            ['laravel新特性与最佳实践', 'https://laravelacademy.org/books/modern-php'],
+            ['Laravel 编码技巧', 'https://learnku.com/docs/laravel-tips/8.x'],
+            ['PHP 之道（PHP The Right Way 中文版）', 'https://learnku.com/docs/php-the-right-way'],
+            ['如何掌握所有的程序语言', 'http://www.yinwang.org/blog-cn/2017/07/06/master-pl'],
+            ['高并发的哲学原理Github', 'https://github.com/johnlui/PPHC'],
+            ['easyswoole系统知识', 'http://www.easyswoole.com/NoobCourse/NetworkrPotocol/introduction.html'],
+            ['阿猫读书-富爸爸穷爸爸', 'https://www.zhihu.com/question/26980854/answer/1080407035'],
+            ['圆运动的古中医学', 'http://zhongyibaodian.com/yuanyundongdeguzhongyixue/'],
+            ['php设计模式', 'https://learnku.com/docs/php-design-patterns/2018'],
+            ['Laravel 从学徒到工匠','https://laravelacademy.org/books/laravel-from-appreciate-to-artisan'],
+            ['webman','https://www.workerman.net/doc/webman/README.html']
+        ]
+
+        const { createApp } = Vue
+
+        createApp({
+            data() {
+                return {
+                    message: "Jivin.L's Favorites",
+                    list: link_sites
+                }
+            }
+        }).mount('#app')
+    </script>
+
+         
+    <script>
+        var _hmt = _hmt || [];
+        (function() {
+          var hm = document.createElement("script");
+          hm.src = "https://hm.baidu.com/hm.js?8effb0dbd553bd35a6a436ffac544691";
+          var s = document.getElementsByTagName("script")[0]; 
+          s.parentNode.insertBefore(hm, s);
+        })();
+    </script>
 
 </body>
+
 </html>
